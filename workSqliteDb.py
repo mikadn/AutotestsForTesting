@@ -29,7 +29,7 @@ class SqliteDb:
             cursor.execute(script)
             client = cursor.fetchall()
             print 'Запрос {0} вернул {1}'.format(script, client)
-            allure.MASTER_HELPER.attach('Запрос {0}'.format(script), ''.format(client))
+            allure.MASTER_HELPER.attach('Запрос {0}'.format(script), '{0}'.format(client))
             clientScheme = ClientScheme
             balanceScheme = BalanceScheme
             if(len(client) is not 0):
@@ -85,7 +85,7 @@ class SqliteDb:
             cursor.execute(script)
             client = cursor.fetchall()
             print 'Запрос {0} вернул {1}'.format(script, client)
-            allure.MASTER_HELPER.attach('Запрос {0}'.format(script), ''.format(client))
+            allure.MASTER_HELPER.attach('Запрос {0}'.format(script), '{0}'.format(client))
             clientScheme = ClientScheme
             balanceScheme = BalanceScheme
             if(len(client) != 0):
