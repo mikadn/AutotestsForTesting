@@ -20,7 +20,7 @@ class WorkWithApi:
             print response.text
             assert 200==response.status_code
             json = response.json()
-            allure.MASTER_HELPER.attach('Запрос /client/services', ''.format(json))
+            allure.MASTER_HELPER.attach('Запрос /client/services', '{0}'.format(json))
             return json
         except requests.RequestException:
             print 'Запрос провалился'
@@ -33,7 +33,7 @@ class WorkWithApi:
             print response.status_code
             print response.text
             assert 200==response.status_code
-            allure.MASTER_HELPER.attach('Запрос /client/services', ''.format(response.json()))
+            allure.MASTER_HELPER.attach('Запрос /client/services', '{0}'.format(response.json()))
             return response.json()
         except requests.RequestException:
             print 'Запрос провалился'
